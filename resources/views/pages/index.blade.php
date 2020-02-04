@@ -71,7 +71,7 @@
             </table>
             </form>
             <!-- Eind van formulier. -->
-            <a class="btn btn-primary" href="{{ url('/telefoonboek') }}">Voeg toe</a>
+            <a class="btn btn-primary" href="{{ url('/toevoegen') }}">Voeg toe</a>
             </div>
           </div>
         </div>

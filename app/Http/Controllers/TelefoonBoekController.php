@@ -9,6 +9,7 @@ use App\TelefoonBoek;
 
 class TelefoonBoekController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -52,10 +53,10 @@ class TelefoonBoekController extends Controller
 
         $telefoonboek = new TelefoonBoek
         ([
-            'id' => $request->get('id'),
-            'voornaam' => $request->get('voornaam'),
-            'achternaam' => $request->get('achternaam'),
-            'telefoonnummer' => $request->get('telefoonnummer')
+            'id'                =>  $request->get('id'),
+            'voornaam'          =>  $request->get('voornaam'),
+            'achternaam'        =>  $request->get('achternaam'),
+            'telefoonnummer'    =>  $request->get('telefoonnummer')
         ]);
 
         $telefoonboek->save();

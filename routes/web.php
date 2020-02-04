@@ -22,15 +22,15 @@ Route::get('/', [
 ]);
 
 // pages die in de master layout worden weergegeven
-Route::get('/telefoonboek', function () {
-    return view('pages/telefoonboek');
-});
+// Route::get('/telefoonboek', function () {
+//     return view('pages/telefoonboek');
+// });
 
 Route::get('/home', function () {
     return view('pages/home');
 });
 
-Route::get('/create', function () {
+Route::get('/toevoegen', function () {
     return view('pages/create');
 });
 
