@@ -30,4 +30,32 @@ Route::get('/home', function () {
     return view('pages/home');
 });
 
+Route::get('/create', function () {
+    return view('pages/create');
+});
+
+Route::get('/update', function () {
+    return view('pages/update');
+});
+
+// Route::get('/index', function () {
+//     return view('pages/index');
+// });
+
+// Route::get('/index', function() {
+//     // $telefoon_boeks = TelefoonBoek::all();
+
+//     // return view('pages/index', compact('telefoon_boeks'));
+// });
+
+
+// Route::get('/index', function () {
+
+//     $telefoon_boeks = DB::table('telefoon_boeks')->get();
+
+//     return view('pages/index', ['telefoon_boeks' => $telefoon_boeks]);
+// });
+
 Route::resource('telefoon_boeks', 'TelefoonBoekController');
+
+Route::get('/pages','TelefoonBoekController@index');

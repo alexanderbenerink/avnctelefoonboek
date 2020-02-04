@@ -3,7 +3,7 @@
 @section('title')
 <title>Home</title>
 
-@section('content')
+@section('main')
 
 <div class="flex-center position-ref full-height">
     @if (Route::has('login'))

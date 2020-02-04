@@ -3,7 +3,7 @@
 @section('title')
 <title>Telefoonboek beheren</title>
 
-@section('content')
+@section('main')
 
 <body>
     <div class="flex-center position-ref full-height">
@@ -17,8 +17,8 @@
         <!-- Header -->
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <h1 class="display-4">Telefoonboek beheren</h1>
-                <p class="lead">Op deze pagina kunt u het telefoonboek beheren.</p>
+                <h1 class="display-4">Toevoegen</h1>
+                <p class="lead">Voer in het onderstaande tabel de benodigde gegevens in.</p>
             </div>
         </div>
 
@@ -40,7 +40,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                    <th scope="row"><input class="form-control" name="id"></th>
+                                    <td><input class="form-control" name="id" placeholder="bijv. '1', '2' etc."></th>
                                     <td><input class="form-control" name="voornaam" placeholder="bijv. John"></td>
                                     <td><input class="form-control" name="achternaam" placeholder="bijv. Doe"></td>
                                     <td><input class="form-control" name="telefoonnummer" placeholder="bijv. 06-12345678"></td>

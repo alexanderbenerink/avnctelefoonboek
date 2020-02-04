@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 // importeer TelefoonBoek model
 use App\TelefoonBoek;
 
@@ -15,7 +16,12 @@ class TelefoonBoekController extends Controller
      */
     public function index()
     {
-        //
+        $telefoon_boeks = TelefoonBoek::all();
+
+        return view('pages/index', compact('telefoon_boeks'));
+        // $telefoon_boeks = DB::table('telefoon_boeks')->select('id','voornaam','achternaam', 'telefoonnummer')->get();
+
+        // return view('pages/index', compact('telefoon_boeks'));
     }
 
     /**
@@ -25,7 +31,7 @@ class TelefoonBoekController extends Controller
      */
     public function create()
     {
-        return view('/telefoonboek.create');
+        return view('/telefoon_boeks.create');
     }
 
     /**
@@ -44,7 +50,7 @@ class TelefoonBoekController extends Controller
             'telefoonnummer'=>'required'
         ]);
 
-        $telefoonboek = new Telefoonboek
+        $telefoonboek = new TelefoonBoek
         ([
             'id' => $request->get('id'),
             'voornaam' => $request->get('voornaam'),

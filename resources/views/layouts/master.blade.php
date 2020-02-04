@@ -70,7 +70,7 @@
         <span class="navbar-brand mb-0 h1"><img src="favicon.ico" width="30" height="30" class="d-inline-block align-top">&nbsp Avance telefoonboek</span>
         <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url('/telefoonboek') }}">Telefoonboek beheren</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url('/telefoon_boeks') }}">Telefoonboek beheren</a></li>
         </ul>
     </nav>
 
@@ -78,7 +78,7 @@
     <body>
         <main>
             <div class="container">
-                @yield('content')
+                @yield('main')
             </div>
         </main>
         <!-- <div class="flex-center position-ref full-height">
