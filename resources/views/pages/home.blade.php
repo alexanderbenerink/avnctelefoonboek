@@ -19,18 +19,14 @@
             @endauth
         </div>
     @endif
-    <div class="card">
-        <div class="card-body">
-            <div class="content" style="text-align: center;">
-                <div class="title m-b-md">
-                    Telefoonboek
-                </div>
-
-                <div class="links">
-                    <p>Bovenaan in de navbar kunt u zichzelf in het telefoonboek registreren.</p>
-                </div>
-            </div>
-        </div>
+    <div class="jumbotron">
+        <h1 class="display-4">Telefoonboek</h1>
+        <p class="lead">Klik op "Telefoonboek beheren" in de navigatiebalk bovenaan om het telefoonboek te beheren.</p>
+        <hr class="my-4">
+        <p>Of klik de knop hieronder</p>
+        <p class="lead">
+            <a class="btn btn-primary" href="{{ url('/telefoon_boeks') }}" role="button">Telefoonboek beheren</a>
+        </p>
     </div>
 </div>
 

@@ -44,10 +44,10 @@ class TelefoonBoekController extends Controller
     {
         $request->validate
         ([
-            'id'=>'required',
-            'voornaam'=>'required',
-            'achternaam'=>'required',
-            'telefoonnummer'=>'required'
+            'id'            =>  'required|numeric',
+            'voornaam'      =>  'required',
+            'achternaam'    =>  'required',
+            'telefoonnummer'=>  'required|numeric'
         ]);
 
         $telefoonboek = new TelefoonBoek
@@ -59,7 +59,7 @@ class TelefoonBoekController extends Controller
         ]);
 
         $telefoonboek->save();
-        return redirect('/telefoonboek')->with('succes', 'Gegevens opgeslagen!');
+        return redirect('/telefoon_boeks')->with('succes', 'Gegevens zijn met succes toegevoegd!');
     }
 
     /**
@@ -81,7 +81,9 @@ class TelefoonBoekController extends Controller
      */
     public function edit($id)
     {
-        //
+        $telefoon_boeks = TelefoonBoek::find($id);
+
+        return view('pages/edit', compact('telefoon_boeks'));
     }
 
     /**
@@ -93,7 +95,21 @@ class TelefoonBoekController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'id'            =>  'required|numeric',
+            'voornaam'      =>  'required',
+            'achternaam'    =>  'required',
+            'telefoonnummer'=>  'required|numeric'
+        ]);
+
+        $telefoon_boeks                 =   TelefoonBoek::find($id);
+        $telefoon_boeks->id             =   $request->get('id');
+        $telefoon_boeks->voornaam       =   $request->get('voornaam');
+        $telefoon_boeks->achternaam     =   $request->get('achternaam');
+        $telefoon_boeks->telefoonnummer =   $request->get('telefoonnummer');
+        $telefoon_boeks->save();
+
+        return redirect('telefoon_boeks')->with('succes', 'Gegevens zijn met succes aangepast!');
     }
 
     /**
@@ -107,6 +123,6 @@ class TelefoonBoekController extends Controller
         $telefoonboek = TelefoonBoek::find($id);
         $telefoonboek->delete();
 
-        return redirect('/telefoonboek')->with('succes', 'Verwijderen was succesvol!');
+        return redirect('telefoon_boeks')->with('succes', 'Verwijderen was succesvol!');
     }
 }
