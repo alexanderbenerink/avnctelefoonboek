@@ -45,3 +45,5 @@ Route::get('/edit', function () {
 Route::resource('telefoon_boeks', 'TelefoonBoekController');
 
 Route::get('/pages','TelefoonBoekController@index');
+
+Route::get('/search', 'TelefoonBoekController@search');

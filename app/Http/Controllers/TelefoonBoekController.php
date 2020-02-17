@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 // importeer TelefoonBoek model
 use App\TelefoonBoek;
+use Kyslik\ColumnSortable\Sortable;
 
 class TelefoonBoekController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -17,12 +17,10 @@ class TelefoonBoekController extends Controller
      */
     public function index()
     {
-        $telefoon_boeks = TelefoonBoek::all();
+        // $telefoon_boeks = TelefoonBoek::all();
+        $telefoon_boeks = TelefoonBoek::sortable()->paginate(5);
 
         return view('pages/index', compact('telefoon_boeks'));
-        // $telefoon_boeks = DB::table('telefoon_boeks')->select('id','voornaam','achternaam', 'telefoonnummer')->get();
-
-        // return view('pages/index', compact('telefoon_boeks'));
     }
 
     /**
@@ -33,6 +31,18 @@ class TelefoonBoekController extends Controller
     public function create()
     {
         return view('/telefoon_boeks.create');
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $telefoon_boeks = DB::table('telefoon_boeks')
+            ->where('id', 'like', '%'.$search.'%')
+            ->orWhere('voornaam', 'like', '%'.$search.'%')
+            ->orWhere('achternaam', 'like', '%'.$search.'%')
+            ->paginate(10);
+
+        return view('pages/index', compact('telefoon_boeks'));
     }
 
     /**

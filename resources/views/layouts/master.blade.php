@@ -62,12 +62,16 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            
+            .jumbotron:nth-child(1), .jumbotron:nth-child(2) {
+                margin-top: 4rem !important;
+            }
         </style>
     </head>
 
     <!-- Navigatiebalk -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <span class="navbar-brand mb-0 h1"><img src="favicon.ico" width="30" height="30" class="d-inline-block align-top">&nbsp Avance telefoonboek</span>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: relative; z-index: 5;">
+        <span class="navbar-brand mb-0 h1"><img src="../../../favicon.ico" width="30" height="30" class="d-inline-block align-top">&nbsp Avance telefoonboek</span>
         <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ url('/telefoon_boeks') }}">Telefoonboek beheren</a></li>

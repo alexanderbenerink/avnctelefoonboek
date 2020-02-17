@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 class TelefoonBoek extends Model
 {
@@ -15,5 +16,8 @@ class TelefoonBoek extends Model
     ];
 
     public $timestamps = false;
+
+    use Sortable;
+    public $sortable = ['id', 'voornaam', 'achternaam', 'telefoonnummer'];
 }
 
